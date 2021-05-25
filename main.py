@@ -16,7 +16,7 @@ def demand_vols(X, Y, Z):
     for src in range(1, X+1):
         for dest in range(1, Z+1):
             LHS = []
-            for trans in range(1, Z+1):
+            for trans in range(1, Y+1):
                 LHS += ['X{}{}{} U{}{}{}'.format(src, trans, dest, src, trans, dest)]
             result += ['{} = {}'.format(' + '.join(LHS), str(src + dest))]
     return '\n'.join(result)
